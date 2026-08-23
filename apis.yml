@@ -1,23 +1,113 @@
 aid: infinitum
 name: Infinitum
-description: 'Infinitum is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Infinitum (formerly Infinitum Electric) is an Austin, Texas motor manufacturer, founded in 2016
+  by Ben Schuler, that builds the Aircore EC+ family of air-core printed-circuit-board (PCB) stator
+  electric motors along with integrated fan and pump systems, Active Front End (AFE) drives, power
+  generation packages and off-road traction motors for data centers, commercial and industrial
+  buildings, water and wastewater treatment, agriculture and mobility. Its software surface is
+  operator tooling rather than a developer platform: the I-con motor control application for
+  commissioning, monitoring and diagnostics, a browser-based Motor Selection Tool (MST) and Fan
+  Selection Tool (FST), an IoT kit for telemetry, and BACnet, Modbus and analog/digital field
+  integration on the motor itself. Infinitum does document an HTTP API for the selection tools -
+  fan selection, motor selection and fan chart endpoints - but the reference is served behind an
+  account sign-in and the company states that detailed API documentation and advanced integration
+  require a signed NDA and a commercial agreement, so no public contract is reachable.
 url: https://raw.githubusercontent.com/api-evangelist/infinitum/refs/heads/main/apis.yml
+image: https://goinfinitum.com/wp-content/uploads/2022/08/cropped-InfinitumLogo-Color-Horz-RGB-425.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-source-url: https://www.hiive.com/securities/infinitum-stock
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
 specificationVersion: '0.20'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
-apis: []
+- Electric Motors
+- Manufacturing
+- Industrial Automation
+- Building Automation
+- Data Centers
+- HVAC
+- Energy Efficiency
+- Internet of Things
+- Hardware
+apis:
+- name: Infinitum Selection Tools API
+  description: >-
+    An HTTP/JSON API over Infinitum's Motor Selection Tool (MST) and Fan Selection Tool (FST),
+    documented by Infinitum for third-party integration with BMS, design software and internal
+    tools. Infinitum's own support article names three endpoints in limited release - a fan
+    selection endpoint (inputs airflow CFM and static pressure, returns matching fan systems as
+    JSON), a motor selection endpoint (returns matching motor configurations as JSON) and a fan
+    chart endpoint (returns a base64 JPEG performance chart) - and points at MST API
+    documentation at https://mst.goinfinitum.com/docs/api. That reference 307-redirects to a
+    sign-in, endpoint URLs and credentials are issued on request, and Infinitum states that
+    detailed API documentation requires a valid NDA and a commercial agreement. No baseURL is
+    recorded here because Infinitum does not publish one.
+  humanURL: https://mst.goinfinitum.com/docs/api
+  tags:
+  - Fan Selection
+  - Motor Selection
+  - HVAC
+  - Building Automation
+  x-access: gated
+  x-access-note: >-
+    Probed 2026-08-23: https://mst.goinfinitum.com/docs/api -> 307 to /sign-in. Access to the
+    reference requires an account; full API documentation requires an NDA and commercial
+    agreement per https://support.goinfinitum.com/hc/en-us/articles/52467614888851
+  properties:
+  - type: Documentation
+    url: https://support.goinfinitum.com/hc/en-us/articles/52467614888851-Fan-Selection-Tool-FST-External-Integration-with-Third-Party-Applications
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/infinitum-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/infinitum-stock
+  url: https://goinfinitum.com/
+- type: Support
+  url: https://support.goinfinitum.com/hc/en-us
+- type: Blog
+  url: https://goinfinitum.com/resources/infinitum-blog/
+- type: SignUp
+  url: https://mst.goinfinitum.com/sign-up
+- type: PrivacyPolicy
+  url: https://goinfinitum.com/privacy-policy/
+- type: TermsOfService
+  url: https://goinfinitum.com/terms/
+- type: Conformance
+  url: conformance/infinitum-conformance.yml
+- type: LLMsTxt
+  url: llms/infinitum-llms.txt
+- type: Plans
+  url: plans/infinitum-plans-pricing.yml
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    Infinitum documents a Motor/Fan Selection Tool JSON API and names three endpoints, but the
+    reference at https://mst.goinfinitum.com/docs/api 307-redirects to a sign-in and the company's
+    own support article states that detailed API documentation requires a signed NDA and a
+    case-by-case commercial agreement, so endpoint URLs, schemas and credentials are issued only
+    to contracted customers.
+  evidence:
+  - url: https://mst.goinfinitum.com/docs/api
+    status: 307
+  - url: https://support.goinfinitum.com/hc/en-us/articles/52467614888851-Fan-Selection-Tool-FST-External-Integration-with-Third-Party-Applications
+    status: 200
+  - url: https://goinfinitum.com/openapi.json
+    status: 404
+  - url: https://goinfinitum.com/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-23'

@@ -1,0 +1,20 @@
+generated: '2026-08-23'
+method: searched
+source: https://support.goinfinitum.com/hc/en-us/articles/52467614888851-Fan-Selection-Tool-FST-External-Integration-with-Third-Party-Applications
+plan_count: 0
+plans: []
+note: >-
+  Infinitum publishes no API access plans, tiers or prices. The company sells motors and fan
+  systems through quotes and its partner program; the selection-tool API it documents is issued
+  on request and, in Infinitum's own words, "a commercial agreement (evaluated on a case-by-case
+  basis)". There is no public pricing page for the API and no self-serve purchase path. The
+  Motor Selection Tool itself is free to register for at https://mst.goinfinitum.com/sign-up.
+x-evidence:
+  checked: '2026-08-23'
+  probes:
+  - url: https://support.goinfinitum.com/hc/en-us/articles/52467614888851-Fan-Selection-Tool-FST-External-Integration-with-Third-Party-Applications
+    status: 200
+  - url: https://mst.goinfinitum.com/sign-up
+    status: 200
+  - url: https://goinfinitum.com/pricing/
+    status: 404

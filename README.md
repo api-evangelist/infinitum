@@ -64,5 +64,30 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Infinitum is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/infinitum-stock
+Infinitum (formerly Infinitum Electric) is an Austin, Texas motor manufacturer, founded in 2016 by
+Ben Schuler, that builds the Aircore EC+ family of air-core printed-circuit-board (PCB) stator
+electric motors along with integrated fan and pump systems, Active Front End (AFE) drives, power
+generation packages and off-road traction motors for data centers, commercial and industrial
+buildings, water and wastewater treatment, agriculture and mobility.
+
+- Website: https://goinfinitum.com/
+- Support / help center: https://support.goinfinitum.com/hc/en-us
+- Motor Selection Tool: https://mst.goinfinitum.com/
+- Fan Selection Tool: https://fst.goinfinitum.com/app/logon.php
+
+## API surface
+
+Infinitum's machine interface is primarily on the motor rather than on the web: BACnet MS/TP
+(ANSI/ASHRAE/ISO 135), Modbus TCP over Ethernet, and analog/digital I/O, configured with the
+Windows-based I-con motor control software.
+
+Infinitum does document an HTTP/JSON API over its Motor Selection Tool and Fan Selection Tool -
+fan selection, motor selection and fan chart endpoints - but that surface is gated. As probed on
+2026-08-23, the reference at `https://mst.goinfinitum.com/docs/api` returns HTTP 307 to a sign-in
+page, and Infinitum's own support article states that detailed API documentation and advanced
+integration capabilities require a valid NDA and a case-by-case commercial agreement. No OpenAPI,
+AsyncAPI, GraphQL SDL, MCP server, A2A agent card or `/.well-known/` document was served on any
+Infinitum host.
+
+Profiled by the API Evangelist enrichment pipeline (secondary-market harvest,
+listing: https://www.hiive.com/securities/infinitum-stock).

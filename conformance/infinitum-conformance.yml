@@ -1,0 +1,77 @@
+generated: '2026-08-23'
+method: searched
+source: https://support.goinfinitum.com/hc/en-us
+summary: >-
+  Infinitum's integration surface is a fieldbus and control-wiring surface on the motor itself,
+  not an HTTP contract. Its documented interoperability standards are building-automation
+  protocols - BACnet MS/TP, Modbus TCP and analog/digital I/O - published as PDF manuals in the
+  Zendesk support portal. An HTTP/JSON API over the Motor Selection Tool and Fan Selection Tool is
+  documented to exist, but its reference sits behind a sign-in and an NDA, so no machine-readable
+  contract could be fetched and no contract-level standard signature could be observed.
+standards:
+- id: bacnet-ms-tp
+  name: BACnet MS/TP (ANSI/ASHRAE/ISO 135)
+  conforms: true
+  evidence: >-
+    "Aircore EC+ BACnet User Manual", BACnet version 1.4, Gen4 release, October 2025: "This manual
+    describes the information needed to operate Infinitum Aircore EC+ motors using the BACnet
+    protocol... defined by ANSI/ASHRAE/ISO Standard 135-2004."
+  evidence_url: https://support.goinfinitum.com/hc/en-us/articles/52466881309587-BACnet-User-Manual
+  surface: motor field bus (RS-485 module), not HTTP
+- id: modbus-tcp
+  name: Modbus TCP
+  conforms: true
+  evidence: >-
+    "Analog / Digital Control Configuration and Wiring": the I-con configuration software connects
+    to the motor over "ethernet cable (Modbus TCP)"; the Aircore EC+ Parameters document publishes
+    the register/parameter set.
+  evidence_url: https://support.goinfinitum.com/hc/en-us/articles/52466902290451-Analog-Digital-Control-Configuration-and-Wiring
+  surface: motor field bus, not HTTP
+- id: analog-digital-io
+  name: Analog / digital I/O control
+  conforms: true
+  evidence: 'Documented analog/digital I/O terminal functions and wiring examples for Aircore EC+.'
+  evidence_url: https://support.goinfinitum.com/hc/en-us/articles/52466902290451-Analog-Digital-Control-Configuration-and-Wiring
+  surface: motor terminal block, not HTTP
+- id: oauth2
+  conforms: false
+  evidence: 'No OpenAPI or documented OAuth surface reachable; MST sign-in is a first-party form.'
+- id: oidc
+  conforms: false
+  evidence: '/.well-known/openid-configuration 404 on all four Infinitum hosts (2026-08-23).'
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: 'No machine-readable contract published; error envelope not observable.'
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: '/.well-known/security.txt 404 on all four Infinitum hosts (2026-08-23).'
+domain_standard_conformance:
+  asserted: false
+  reason: >-
+    NOT asserted. BACnet and Modbus are genuine domain standards for building automation and
+    Infinitum genuinely implements them, but the 0.12.0 check reads a signature in the CONTRACT -
+    a schema URN, a metadata surface, a topic namespace - and Infinitum publishes no fetchable
+    contract at all. Crediting it from a PDF manual would be crediting a claim, which is exactly
+    what the check was written to stop.
+compliance:
+  published: false
+  note: >-
+    The only certification Infinitum publishes is product safety: ETL certification through
+    Intertek for named motor frame sizes (https://goinfinitum.com/certifications/, HTTP 200).
+    No SOC 2, ISO 27001, PCI, HIPAA or FedRAMP posture and no trust center were found, so no
+    Compliance or TrustCenter pointer is emitted.
+commercial_surface:
+  published_plans: false
+  published_rate_limits: false
+  note: >-
+    Infinitum publishes no API pricing tiers and no rate limits - both would be issued with the
+    credentials, which are issued on request under a commercial agreement. No RateLimits pointer
+    is emitted for this provider: a rate-limits artifact recording a zero would still read as a
+    documented rate-limit signal to the scorer, and Infinitum documents none.
+x-evidence:
+  checked: '2026-08-23'
+  probes:
+  - url: https://support.goinfinitum.com/api/v2/help_center/en-us/articles.json
+    status: 200
+  - url: https://goinfinitum.com/certifications/
+    status: 200

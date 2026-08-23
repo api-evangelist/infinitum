@@ -1,0 +1,103 @@
+generated: '2026-08-23'
+method: probed
+source: live GET of /.well-known/* on every Infinitum host named in apis.yml
+note: >-
+  Recorded absence. Every /.well-known/ path returned a hard 404 on all four Infinitum hosts -
+  the marketing site (WordPress), the Motor Selection Tool (Next.js on Vercel), the Fan Selection
+  Tool (PHP) and the Zendesk support portal. A random control path returned the same 404 body and
+  byte count as the probed paths on each host, so none of these hosts is a soft-404 catch-all and
+  none of these 404s is a false negative. No WellKnown, SecurityTxt or APICatalog pointer is
+  emitted in apis.yml, because nothing was served.
+hit_count: 0
+hosts:
+- host: https://goinfinitum.com
+  soft_404_control:
+    path: /.well-known/ae-soft404-control-<random>
+    status: 404
+    bytes: 660317
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://mst.goinfinitum.com
+  soft_404_control:
+    path: /.well-known/ae-soft404-control-<random>
+    status: 404
+    bytes: 21454
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://fst.goinfinitum.com
+  soft_404_control:
+    path: /.well-known/ae-soft404-control-<random>
+    status: 404
+    bytes: 196
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://support.goinfinitum.com
+  soft_404_control:
+    path: /.well-known/ae-soft404-control-<random>
+    status: 404
+    bytes: 31416
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+x-evidence:
+  checked: '2026-08-23'
+  user_agent: browser UA (Chrome 124 on macOS)
