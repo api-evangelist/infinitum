@@ -25,6 +25,18 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://goinfinitum.com/wp-content/uploads/2022/08/cropped-InfinitumLogo-Color-Horz-RGB-425.png
 x-type: company
 x-source: harvest:secondary-market
