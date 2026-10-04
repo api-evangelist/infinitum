@@ -52,7 +52,7 @@ tags:
 - Manufacturing
 - Industrial Automation
 - Building Automation
-- Data-Center
+- Data Center
 - HVAC
 - Energy Efficiency
 - IoT
@@ -68,6 +68,7 @@ tags_raw:
 - Energy Efficiency
 - Internet of Things
 - Hardware
+- Data-Center
 apis:
 - name: Infinitum Selection Tools API
   description: >-
