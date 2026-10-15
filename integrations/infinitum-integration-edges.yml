@@ -1,0 +1,67 @@
+edges:
+- partner_name: BACnet Testing Laboratories (BTL Listed)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  evidence: https://www.bacnetinternational.net/btl/?m=383
+  category: building automation
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: BTL Listing of Tested Products (bacnetinternational.net/btl)
+    spec_file: null
+    standard: BACnet (BTL)
+    role: btl-listed-manufacturer
+    registered_name: Infinitum Electric
+    website: https://goinfinitum.com/
+    matched_domain: goinfinitum.com
+    matched_by: domain
+    btl_manufacturer_ids:
+    - '383'
+    certified_products:
+    - product: BACnet Application Specific Controller (B-ASC)
+      lapsed: false
+      listed_products:
+      - Aircore EC Communication Module
+    signal_note: certified_products = one entry per BACnet DEVICE PROFILE with a BTL-listed product (the product
+      type); product names are context, never a count; current listing only (archives.php superseded listings not
+      read)
+    detected_by: sweep-building-automation.py
+    detected: '2026-10-15'
+  detected_by: sweep-building-automation.py
+  first_seen: '2026-10-15'
+- partner_name: BACnet Testing Laboratories (BTL Listed)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  evidence: https://www.bacnetinternational.net/btl/?m=383
+  category: building automation
+  channel: standard-directory
+  relationship: compatible
+  shape: bacnet
+  evidence_kind: conformance-register
+  degree: certified
+  report_only: true
+  contract_reference:
+    register: BTL Listing of Tested Products (bacnetinternational.net/btl)
+    spec_file: null
+    standard: BACnet (BTL)
+    role: btl-listed-bacnet-device
+    registered_name: Infinitum Electric
+    matched_domain: goinfinitum.com
+    detected_by: sweep-building-automation.py
+    detected: '2026-10-15'
+  detected_by: sweep-building-automation.py
+  first_seen: '2026-10-15'
+generated: '2026-10-15'
+method: searched
+source:
+- https://www.bacnetinternational.net/btl/
+- https://www.knx.org/community/manufacturers
+checked:
+- https://brickschema.org/consortium/
+- https://marketing.project-haystack.org/about-us
+- https://www.bacnetinternational.net/btl/
+- https://www.knx.org/community/manufacturers
