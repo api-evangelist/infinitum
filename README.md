@@ -64,30 +64,94 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Infinitum (formerly Infinitum Electric) is an Austin, Texas motor manufacturer, founded in 2016 by
-Ben Schuler, that builds the Aircore EC+ family of air-core printed-circuit-board (PCB) stator
-electric motors along with integrated fan and pump systems, Active Front End (AFE) drives, power
-generation packages and off-road traction motors for data centers, commercial and industrial
-buildings, water and wastewater treatment, agriculture and mobility.
+Infinitum (formerly Infinitum Electric) is an Austin, Texas motor manufacturer, founded in 2016 by Ben Schuler, that builds the Aircore EC+ family of air-core printed-circuit-board (PCB) stator electric motors along with integrated fan and pump systems, Active Front End (AFE) drives, power generation packages and off-road traction motors for data centers, commercial and industrial buildings, water and wastewater treatment, agriculture and mobility. Its software surface is operator tooling rather than a developer platform: the I-con motor control application for commissioning, monitoring and diagnostics, a browser-based Motor Selection Tool (MST) and Fan Selection Tool (FST), an IoT kit for telemetry, and BACnet, Modbus and analog/digital field integration on the motor itself. Infinitum does document an HTTP API for the selection tools - fan selection, motor selection and fan chart endpoints - but the reference is served behind an account sign-in and the company states that detailed API documentation and advanced integration require a signed NDA and a commercial agreement, so no public contract is reachable.
 
-- Website: https://goinfinitum.com/
-- Support / help center: https://support.goinfinitum.com/hc/en-us
-- Motor Selection Tool: https://mst.goinfinitum.com/
-- Fan Selection Tool: https://fst.goinfinitum.com/app/logon.php
+**Areas:** Company · Electric Motors · Manufacturing · Industrial Automation · Building Automation · Data Center · HVAC · Energy Efficiency · IoT · Hardware
 
-## API surface
+## Infinitum on APIs.io
 
-Infinitum's machine interface is primarily on the motor rather than on the web: BACnet MS/TP
-(ANSI/ASHRAE/ISO 135), Modbus TCP over Ethernet, and analog/digital I/O, configured with the
-Windows-based I-con motor control software.
+Everything profiled for Infinitum is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/infinitum/](https://apis.io/providers/infinitum/)** — or go straight to one of the APIs or properties below.
 
-Infinitum does document an HTTP/JSON API over its Motor Selection Tool and Fan Selection Tool -
-fan selection, motor selection and fan chart endpoints - but that surface is gated. As probed on
-2026-08-23, the reference at `https://mst.goinfinitum.com/docs/api` returns HTTP 307 to a sign-in
-page, and Infinitum's own support article states that detailed API documentation and advanced
-integration capabilities require a valid NDA and a case-by-case commercial agreement. No OpenAPI,
-AsyncAPI, GraphQL SDL, MCP server, A2A agent card or `/.well-known/` document was served on any
-Infinitum host.
+### APIs (1)
 
-Profiled by the API Evangelist enrichment pipeline (secondary-market harvest,
-listing: https://www.hiive.com/securities/infinitum-stock).
+- [Infinitum Selection Tools API](https://apis.io/apis/infinitum/infinitum-selection-tools-api/) — An HTTP/JSON API over Infinitum's Motor Selection Tool (MST) and Fan Selection Tool (FST), documented by Infinitum for third-party integration with BMS,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Infinitum Domain Security](https://apis.io/security/infinitum/infinitum-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Infinitum Plans Pricing](https://apis.io/plans/infinitum/infinitum-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://goinfinitum.com/)
+- [Sign up](https://mst.goinfinitum.com/sign-up)
+- [Support](https://support.goinfinitum.com/hc/en-us)
+- [Blog](https://goinfinitum.com/resources/infinitum-blog/)
+- [Terms of service](https://goinfinitum.com/terms/)
+- [Privacy policy](https://goinfinitum.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 18.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 34.2 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.6** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/infinitum/](https://apis.io/providers/infinitum/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Infinitum: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/infinitum/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
